@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://imj1m43l8q0m"]
+[gd_scene load_steps=4 format=3 uid="uid://imj1m43l8q0m"]
+
+[ext_resource type="Texture2D" uid="uid://b1g5nxtr4ocgr" path="res://sprites/background.png" id="1_nn7nw"]
+[ext_resource type="PackedScene" uid="uid://s2fsug0tww06" path="res://scenes/ground.tscn" id="2_4jwem"]
+[ext_resource type="PackedScene" uid="uid://do5v4t434g2rs" path="res://scenes/plane.tscn" id="3_5uawr"]
 
 [node name="Main" type="Node"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(400, 240)
+texture = ExtResource("1_nn7nw")
+
+[node name="Ground" parent="." instance=ExtResource("2_4jwem")]
+
+[node name="Ground2" parent="." instance=ExtResource("2_4jwem")]
+position = Vector2(1200, 445)
+
+[node name="Plane" parent="." instance=ExtResource("3_5uawr")]
+position = Vector2(142, 76)
