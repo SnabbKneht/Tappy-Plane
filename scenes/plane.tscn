@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://do5v4t434g2rs"]
+
+[ext_resource type="Script" path="res://scripts/plane.gd" id="1_2kvpd"]
+[ext_resource type="Texture2D" uid="uid://by3es8j677rvy" path="res://sprites/Planes/planeRed1.png" id="1_y6gk3"]
+[ext_resource type="Texture2D" uid="uid://7fgk037eafg1" path="res://sprites/Planes/planeRed2.png" id="2_i7x57"]
+[ext_resource type="Texture2D" uid="uid://bkxtl4kky0fwo" path="res://sprites/Planes/planeRed3.png" id="3_kiva1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itai8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y6gk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i7x57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kiva1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i7x57")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g17qt"]
+radius = 29.0172
+
+[node name="Plane" type="RigidBody2D"]
+script = ExtResource("1_2kvpd")
+force = 1000.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_itai8")
+autoplay = "default"
+frame_progress = 0.899037
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g17qt")
