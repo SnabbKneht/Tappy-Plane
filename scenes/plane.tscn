@@ -89,6 +89,9 @@ animations = [{
 radius = 29.0172
 
 [node name="Plane" type="RigidBody2D"]
+lock_rotation = true
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_2kvpd")
 force = 1000.0
 
@@ -98,3 +101,5 @@ animation = &"blue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g17qt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
