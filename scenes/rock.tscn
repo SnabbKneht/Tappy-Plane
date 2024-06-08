@@ -9,19 +9,20 @@ size = Vector2(22, 478)
 
 [node name="Rock" type="StaticBody2D" groups=["obstacles"]]
 z_index = -5
-position = Vector2(122, 0)
+position = Vector2(122, 241)
 script = ExtResource("1_4r3xx")
 speed = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(746, 361)
+position = Vector2(746, 119)
 texture = ExtResource("1_5lke3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -242)
 polygon = PackedVector2Array(694, 477, 722, 372, 730, 365, 755, 243, 760, 243, 772, 345, 777, 345, 785, 416, 791, 420, 798, 478)
 
 [node name="ScoreArea" type="Area2D" parent="." groups=["score_areas"]]
-position = Vector2(23, 0)
+position = Vector2(23, -242)
 script = ExtResource("2_8lccc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
@@ -29,7 +30,7 @@ position = Vector2(787, 239)
 shape = SubResource("RectangleShape2D_f5r8y")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(744.5, 239)
+position = Vector2(744.5, -3)
 scale = Vector2(5.35, 23.9)
 
 [connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]

@@ -5,7 +5,7 @@
 
 [node name="RockSpawner" type="Node"]
 script = ExtResource("1_egj20")
-rock_scenes = [ExtResource("2_imqeq")]
+rock_scene = ExtResource("2_imqeq")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

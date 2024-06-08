@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var rock_scenes: Array[PackedScene]
+@export var rock_scene: PackedScene
 
 
 func _on_timer_timeout():
@@ -9,5 +9,7 @@ func _on_timer_timeout():
 
 
 func spawn_rock():
-	var new_rock = rock_scenes.pick_random().instantiate()
+	var new_rock = rock_scene.instantiate()
+	if randi() % 2 == 0:
+		new_rock.scale.y = -1
 	add_child(new_rock)
