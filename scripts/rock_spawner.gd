@@ -4,6 +4,9 @@ extends Node
 signal rock_passed
 
 
+@onready var timer = $Timer
+
+
 @export var rock_scene: PackedScene
 
 
@@ -17,3 +20,7 @@ func spawn_rock():
 		new_rock.scale.y = -1
 	new_rock.get_node("ScoreArea").passed.connect(func(): rock_passed.emit())
 	add_child(new_rock)
+
+
+func start():
+	timer.start()

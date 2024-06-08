@@ -14,6 +14,7 @@ signal crashed(position)
 func _ready():
 	var color_variants = animated_sprite.sprite_frames.get_animation_names()
 	animated_sprite.play(Array(color_variants).pick_random())
+	freeze = true
 
 
 func _process(_delta):
@@ -24,3 +25,7 @@ func _process(_delta):
 func _on_body_entered(_body):
 	crashed.emit(position)
 	queue_free()
+
+
+func start():
+	freeze = false

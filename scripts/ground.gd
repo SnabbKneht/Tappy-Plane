@@ -9,6 +9,9 @@ extends StaticBody2D
 @export var speed: float
 
 
+var game_started = false
+
+
 var initial_position_x
 
 
@@ -17,6 +20,11 @@ func _ready():
 
 
 func _physics_process(delta):
+	if not game_started: return
 	position.x -= delta * speed
 	if initial_position_x - position.x > move_distance:
 		position.x = initial_position_x
+
+
+func start():
+	game_started = true
