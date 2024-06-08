@@ -12,4 +12,4 @@ func _on_button_pressed():
 
 
 func update_score(score):
-	score_label.text = score
+	score_label.text = str(score)
