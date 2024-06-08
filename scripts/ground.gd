@@ -1,3 +1,4 @@
+class_name Ground
 extends StaticBody2D
 
 
@@ -15,7 +16,7 @@ func _ready():
 	initial_position_x = position.x
 
 
-func _process(delta):
+func _physics_process(delta):
 	position.x -= delta * speed
 	if initial_position_x - position.x > move_distance:
 		position.x = initial_position_x

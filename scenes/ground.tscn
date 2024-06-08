@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c7xuxmjv1d8uo" path="res://sprites/groundDirt.png" id="1_kvcaj"]
 [ext_resource type="Script" path="res://scripts/ground.gd" id="2_y8h1m"]
 
-[node name="Ground" type="StaticBody2D"]
+[node name="Ground" type="StaticBody2D" groups=["obstacles"]]
 position = Vector2(400, 445)
 script = ExtResource("2_y8h1m")
 move_distance = 800

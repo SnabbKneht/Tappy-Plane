@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://imj1m43l8q0m"]
+[gd_scene load_steps=6 format=3 uid="uid://imj1m43l8q0m"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_hsphl"]
 [ext_resource type="Texture2D" uid="uid://b1g5nxtr4ocgr" path="res://sprites/background.png" id="1_nn7nw"]
 [ext_resource type="PackedScene" uid="uid://s2fsug0tww06" path="res://scenes/ground.tscn" id="2_4jwem"]
 [ext_resource type="PackedScene" uid="uid://do5v4t434g2rs" path="res://scenes/plane.tscn" id="3_5uawr"]
+[ext_resource type="PackedScene" uid="uid://cjdj51l64hw3f" path="res://scenes/rock_spawner.tscn" id="6_60lsg"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_hsphl")
 
 [node name="Background" type="Sprite2D" parent="."]
+z_index = -10
 position = Vector2(400, 240)
 texture = ExtResource("1_nn7nw")
 
@@ -15,5 +19,15 @@ texture = ExtResource("1_nn7nw")
 [node name="Ground2" parent="." instance=ExtResource("2_4jwem")]
 position = Vector2(1200, 445)
 
+[node name="Ground3" parent="." instance=ExtResource("2_4jwem")]
+position = Vector2(400, 35)
+scale = Vector2(-1, -1)
+
+[node name="Ground4" parent="." instance=ExtResource("2_4jwem")]
+position = Vector2(1200, 35)
+scale = Vector2(-1, -1)
+
 [node name="Plane" parent="." instance=ExtResource("3_5uawr")]
-position = Vector2(142, 76)
+position = Vector2(105, 168)
+
+[node name="RockSpawner" parent="." instance=ExtResource("6_60lsg")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://do5v4t434g2rs"]
 
-[ext_resource type="Script" path="res://scripts/plane.gd" id="1_2kvpd"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ouqjx"]
 [ext_resource type="Texture2D" uid="uid://by3es8j677rvy" path="res://sprites/Planes/planeRed1.png" id="1_y6gk3"]
 [ext_resource type="Texture2D" uid="uid://7fgk037eafg1" path="res://sprites/Planes/planeRed2.png" id="2_i7x57"]
 [ext_resource type="Texture2D" uid="uid://bw8w0svqqkh3c" path="res://sprites/Planes/planeBlue1.png" id="2_r6srq"]
@@ -86,16 +86,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g17qt"]
-radius = 29.0172
+radius = 17.0294
 
 [node name="Plane" type="RigidBody2D"]
 lock_rotation = true
 max_contacts_reported = 1
 contact_monitor = true
-script = ExtResource("1_2kvpd")
-force = 1000.0
+script = ExtResource("1_ouqjx")
+force = 500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_itai8")
 animation = &"blue"
 
