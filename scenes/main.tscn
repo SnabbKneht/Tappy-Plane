@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://imj1m43l8q0m"]
+[gd_scene load_steps=9 format=3 uid="uid://imj1m43l8q0m"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hsphl"]
 [ext_resource type="Texture2D" uid="uid://b1g5nxtr4ocgr" path="res://sprites/background.png" id="1_nn7nw"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://t1hnuyfyaw2q" path="res://scenes/score_label.tscn" id="6_0suru"]
 [ext_resource type="PackedScene" uid="uid://cjdj51l64hw3f" path="res://scenes/rock_spawner.tscn" id="6_60lsg"]
 [ext_resource type="PackedScene" uid="uid://1fjub8rfwbmx" path="res://scenes/start_button.tscn" id="7_leeie"]
+[ext_resource type="PackedScene" uid="uid://byn0sv0ctqrew" path="res://scenes/game_over_panel.tscn" id="8_4a1fq"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hsphl")
@@ -38,6 +39,10 @@ position = Vector2(105, 168)
 
 [node name="StartButton" parent="." instance=ExtResource("7_leeie")]
 
+[node name="GameOverPanel" parent="." instance=ExtResource("8_4a1fq")]
+visible = false
+
 [connection signal="crashed" from="Plane" to="." method="_on_plane_crashed"]
 [connection signal="rock_passed" from="RockSpawner" to="." method="_on_rock_passed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="restart_button_pressed" from="GameOverPanel" to="." method="_on_game_over_panel_restart_button_pressed"]

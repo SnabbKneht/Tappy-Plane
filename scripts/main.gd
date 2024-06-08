@@ -5,6 +5,7 @@ extends Node
 @onready var score_label = $ScoreLabel
 @onready var rock_spawner = $RockSpawner
 @onready var start_button = $StartButton
+@onready var game_over_panel = $GameOverPanel
 
 
 var score
@@ -15,8 +16,9 @@ func _ready():
 
 
 func _on_plane_crashed(_position):
-	await get_tree().create_timer(2.0).timeout
-	get_tree().reload_current_scene()
+	await get_tree().create_timer(1.0).timeout
+	game_over_panel.update_score(score)
+	game_over_panel.show()
 
 
 func _on_rock_passed():
@@ -33,3 +35,8 @@ func start_game():
 func _on_start_button_pressed():
 	start_button.hide()
 	start_game()
+
+
+func _on_game_over_panel_restart_button_pressed():
+	game_over_panel.hide()
+	get_tree().reload_current_scene()
