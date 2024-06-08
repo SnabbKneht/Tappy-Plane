@@ -15,7 +15,8 @@ func _ready():
 
 
 func _on_plane_crashed(_position):
-	print('Game over.')
+	await get_tree().create_timer(2.0).timeout
+	get_tree().reload_current_scene()
 
 
 func _on_rock_passed():
