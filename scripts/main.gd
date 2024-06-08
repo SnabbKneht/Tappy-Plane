@@ -1,8 +1,20 @@
 extends Node
 
 
-@onready var plane = $Plane
+@onready var score_label = $ScoreLabel
+
+
+var score
 
 
 func _ready():
-	plane.crashed.connect(func(_pos): print('Game over.'))
+	score = 0
+
+
+func _on_plane_crashed(_position):
+	print('Game over.')
+
+
+func _on_rock_passed():
+	score += 1
+	score_label.text = str(score)
